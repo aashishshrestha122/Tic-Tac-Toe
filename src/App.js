@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import Player from './components/choosePlayer';
+import Player from "./components/choosePlayer";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       board: Array(9).fill(null),
-      player: "X",
+      player: null,
       winner: null
     };
   }
@@ -40,16 +40,24 @@ class App extends Component {
   }
 
   handleClick(index) {
-    let newBoard = this.state.board;
-    if (this.state.board[index] === null && !this.state.winner) {
-      newBoard[index] = this.state.player;
-      this.setState({
-        board: newBoard,
-        player: this.state.player === "X" ? "0" : "X"
-      });
-    }
+    if (this.state.player && !this.state.winner) {
+      let newBoard = this.state.board;
+      if (this.state.board[index] === null) {
+        newBoard[index] = this.state.player;
+        this.setState({
+          board: newBoard,
+          player: this.state.player === "X" ? "0" : "X"
+        });
+      }
 
-    this.checkWinner();
+      this.checkWinner();
+    }
+  }
+
+  setPlayer(player) {
+    this.setState({
+      player
+    });
   }
 
   render() {
@@ -58,10 +66,16 @@ class App extends Component {
         {box}
       </div>
     ));
+
+    let status = this.state.player ? (
+      <h2>Next Turn is of Player {this.state.player}</h2>
+    ) : (
+      <Player player={e => this.setPlayer(e)} />
+    );
     return (
       <div className="container">
         <h1> Tic Tac Toe App</h1>
-        <Player />
+        {status}
         <div className="board">{Box}</div>
       </div>
     );
