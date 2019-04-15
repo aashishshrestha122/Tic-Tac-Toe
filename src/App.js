@@ -38,7 +38,11 @@ class App extends Component {
           winner: this.state.player
         });
       }
-
+      else if (!this.state.board.includes(null)) {
+        alert("Match Drawn");
+        window.location.reload();
+      }
+      
     }
   }
 

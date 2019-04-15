@@ -12,11 +12,13 @@ class Player extends Component {
       <form onSubmit={(e)=> this.handleForm(e)}>
         <label className="radioStyle">
           Player X
-          <input type="radio" name="player" value ="X" />
+          <input type="radio" name="player" value="X" />
+          <span className="circle"></span>
         </label>
         <label className="radioStyle">
           Player O
-          <input type="radio" name="player" value ="O" />
+          <input type="radio" name="player" value="O" />
+          <span className="circle"></span>
         </label>
         <input type="submit" value="START" id="submitButton" />
       </form>
