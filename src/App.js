@@ -36,6 +36,7 @@ class App extends Component {
           winner: this.state.player
         });
       }
+
     }
   }
 
@@ -46,7 +47,7 @@ class App extends Component {
         newBoard[index] = this.state.player;
         this.setState({
           board: newBoard,
-          player: this.state.player === "X" ? "0" : "X"
+          player: this.state.player === "X" ? "O" : "X"
         });
       }
 
