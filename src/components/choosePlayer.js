@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "../App.css";
 class Player extends Component {
 
 
@@ -10,15 +10,15 @@ class Player extends Component {
   render() {
     return (
       <form onSubmit={(e)=> this.handleForm(e)}>
-        <label>
+        <label className="radioStyle">
           Player X
           <input type="radio" name="player" value ="X" />
         </label>
-        <label>
+        <label className="radioStyle">
           Player O
           <input type="radio" name="player" value ="O" />
         </label>
-        <input type="submit" value="start" />
+        <input type="submit" value="START" id="submitButton" />
       </form>
     );
   }
