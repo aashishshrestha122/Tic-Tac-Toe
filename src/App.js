@@ -31,7 +31,9 @@ class App extends Component {
         this.state.board[a] === this.state.board[b] &&
         this.state.board[a] === this.state.board[c]
       ) {
-        alert("You Won");
+        let winnerPlayer = this.state.player;
+        alert("You Won Player " + winnerPlayer);
+        window.location.reload();
         this.setState({
           winner: this.state.player
         });
@@ -67,7 +69,6 @@ class App extends Component {
         {box}
       </div>
     ));
-
     let status = this.state.player ? (
       <h2>Next Turn is of Player {this.state.player}</h2>
     ) : (
