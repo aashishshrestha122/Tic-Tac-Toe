@@ -1,18 +1,56 @@
-.container{
+.container {
   text-align: center;
+  background-color: #405d27;
+  width: auto;
 }
 
-.box{
+body {
+  background-color: #405d27;
+  text-decoration: #3e4444;
+}
+
+.box {
   width: 80px;
   height: 80px;
   border: 1px solid black;
   display: inline-block;
   line-height: 80px;
   cursor: pointer;
+  border-radius: 10px;
+  font-size: 50px;
+  background-color: #4caf50;
 }
 
-.board{
+
+.board {
   display: inline-flex;
   flex-wrap: wrap;
-  width: 320px;
+  width: 246px;
+  
+  border-radius: 5px;
+}
+
+#submitButton {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+label {
+  display: inline-flexbox;
+  position: relative;
+  font-weight: 300;
+  font-size: 1.35em;
+  margin: 10px auto;
+  height: 30px;
+  z-index: 9;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
 }
